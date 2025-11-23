@@ -1,0 +1,15 @@
+# Bỏ qua thư mục build
+build/
+cmake-build-debug/
+
+# Bỏ qua file chạy và file rác
+*.exe
+*.o
+*.a
+*.pdb
+
+# Bỏ qua file database log (để test)
+*.data
+
+# Bỏ qua cấu hình VS Code
+.vscode/
