@@ -13,3 +13,13 @@ cmake-build-debug/
 
 # Bỏ qua cấu hình VS Code
 .vscode/
+
+# Bỏ qua rác CMake (nếu lỡ build ở root)
+CMakeFiles/
+CMakeCache.txt
+*.cmake
+Makefile
+
+.cache/
+__pycache__/
+*.pyc
