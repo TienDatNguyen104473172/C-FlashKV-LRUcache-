@@ -3,9 +3,11 @@
 
 #include "lru_cache.h"
 #include <fstream> // MỚI: Thư viện đọc ghi file
+#include <mutex>
 #include <optional>
 #include <string>
 #include <unordered_map>
+
 
 class KVStore {
 private:
@@ -15,6 +17,8 @@ private:
   const std::string DB_FILE = "flashkv.data";
 
   LRUCache cache;
+
+  std::mutex store_mtx;
 
   // Hàm nội bộ: Ghi log vào file
   void _log_to_disk(const std::string &cmd, const std::string &key,
