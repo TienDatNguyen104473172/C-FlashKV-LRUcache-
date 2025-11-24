@@ -2,7 +2,7 @@
 
 > **High-Performance, Multi-threaded In-Memory Key-Value Store with Async Persistence.**
 
-**FlashKV** is a robust, lightweight Key-Value database engine built from scratch in C++. It demonstrates advanced systems programming concepts including **Multi-threading**, **Thread Safety**, **LRU Caching**, and **Asynchronous I/O**.
+**FlashKV** is a robust, lightweight Key-Value database engine built from scratch in C++. It demonstrates advanced systems programming concepts including **Multi-threading**, **Thread Safety**, **LRU Caching**, and **Asynchronous Persistence**.
 
 Designed as a high-performance backend component, FlashKV handles concurrent client connections efficiently and ensures data durability without blocking the main request processing loop.
 
@@ -11,7 +11,7 @@ Designed as a high-performance backend component, FlashKV handles concurrent cli
 ## Key Features
 
 -   **Multi-threaded Server**: Implements a **Thread-per-Client** architecture to handle thousands of concurrent connections simultaneously.
--   **Thread Safety**: Ensures data integrity across multiple threads using fine-grained locking (`std::mutex`, `std::lock_guard`) to prevent Race Conditions.
+-   **Thread Safety**: Ensures data integrity across multiple threads using Mutex-based synchronization (`std::mutex`, `std::lock_guard`) to prevent Race Conditions.
 -   **LRU Cache**: Built-in **Least Recently Used (LRU)** cache eviction policy to optimize read performance for frequently accessed data.
 -   **Async Logging (WAL)**: Decouples Disk I/O from the critical path using a **Producer-Consumer** model with `std::condition_variable` and a background worker thread. This ensures `SET` operations are extremely fast and not bottlenecked by disk writes.
 -   **Crash Recovery**: Automatically restores data from the disk log upon startup.
